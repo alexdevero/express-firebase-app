@@ -1,0 +1,45 @@
+# Default endpoint
+GET http://localhost:3000/
+
+###
+
+# Get all collections
+GET http://localhost:3000/all
+
+###
+
+# Get single collection if it exists
+GET http://localhost:3000/billGates
+
+###
+
+# Delete collection if it exists
+DELETE http://localhost:3000/delete
+content-type: application/json
+
+  {
+    "document": "test-collection",
+    "collection": "billGates"
+  }
+
+###
+
+# Delete all existing collections
+
+DELETE http://localhost:3000/removeAll
+
+###
+
+# Create new collection if it doesn't exist
+POST http://localhost:3000/add
+content-type: application/json
+
+  {
+    "document": "test-collection",
+    "collection": "billGates",
+    "data": {
+      "urst": "Bill",
+      "last": "Gates",
+      "born": 1942
+    }
+  }
